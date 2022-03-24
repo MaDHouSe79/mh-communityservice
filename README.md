@@ -5,6 +5,10 @@
 - Run away will not work, you will get punish ever time when you walk away from the location.
 - If a player gets in community service, all the players on the server will know it.
 
+## 💪 Dependencies
+- ✅ [oxmysql](https://github.com/overextended/oxmysql/releases/tag/v1.9.3)
+- ✅ [qb-core](https://github.com/qbcore-framework/qb-core)
+
 ## Install
 - place the folder `qb-communityservice` in `resources/[qb]`
 - add the sql table to your database.
