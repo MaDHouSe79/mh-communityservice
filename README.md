@@ -18,6 +18,18 @@
 - Use the /comserv [player_id] [service_count] command (only admins).
 - Use the /endcomserv [player_id] to finish a player's community service (only admins).
 
+
+
+## Trigger you can use
+- You can use if you want a trigger in your police server 
+```lua
+TriggerEvent('qb-communityservice:sendToCommunityService', id, amount)
+```
+- or a client trigger in police client
+```lua
+TriggerServerEvent('qb-communityservice:sendToCommunityService', id, amount)
+```
+
 ## 🐞 Any bugs issues or suggestions, let my know.
 
 ## 🙈 Youtube & Discord
