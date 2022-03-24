@@ -20,7 +20,7 @@
 
 
 
-## Trigger you can use
+## Trigger you can use for the police
 - You can use if you want a trigger in your police server 
 ```lua
 TriggerEvent('qb-communityservice:sendToCommunityService', id, amount)
