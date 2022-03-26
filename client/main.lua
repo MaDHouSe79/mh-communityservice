@@ -14,15 +14,6 @@ local function Round(input, decimalPlaces)
     return tonumber(string.format("%." .. (decimalPlaces or 0) .. "f", input))
 end
 
-
-function OpenMessage()
-    SendNUIMessage({open = true})
-end
-
-function CloseMessage()
-    SendNUIMessage({open = false})
-end
-
 function FillActionTable(last_action)
 	while #availableActions < 5 do
 		local service_does_not_exist = true
@@ -229,7 +220,6 @@ function ApplyPrisonerSkin()
 			ResetPedVisibleDamage(playerPed)
 			ClearPedLastWeaponDamage(playerPed)
 			ResetPedMovementClipset(playerPed, 0)
-			OpenMessage()
 		end)
 	end
 end
