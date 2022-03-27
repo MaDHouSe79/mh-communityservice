@@ -19,6 +19,17 @@
 - Use the /endcomserv [player_id] to finish a player's community service (only admins).
 
 
+## Or for qb-radialmenu police job actions.
+```lua
+{
+    id = 'comserv',
+    title = 'Comm Service',
+    icon = 'user-lock',
+    type = 'client',
+    event = 'qb-communityservice:client:opencomserv',
+    shouldClose = true
+}
+```
 
 ## Trigger you can use for the police
 - You can use if you want a trigger in your police server 
