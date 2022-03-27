@@ -64,7 +64,7 @@ AddEventHandler('qb-communityservice:client:opencomserv', function(source)
 		if not comserv_menu.id or not comserv_menu.amount then
 			return
 		else
-			TriggerServerEvent('qb-communityservice:sendToCommunityService', comserv_menu.id, comserv_menu.amount)
+			TriggerServerEvent('qb-communityservice:sendToCommunityService', tonumber(comserv_menu.id), tonumber(comserv_menu.amount))
 		end
 	end
 end)
