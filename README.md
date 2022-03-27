@@ -19,7 +19,7 @@
 - Use the /endcomserv [player_id] to finish a player's community service (only admins).
 
 
-## Or for qb-radialmenu police job actions.
+## For qb-radialmenu police job actions.
 ```lua
 {
     id = 'comserv',
