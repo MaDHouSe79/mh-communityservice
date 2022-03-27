@@ -40,6 +40,35 @@ RegisterNetEvent('QBCore:Player:SetPlayerData', function(data)
     PlayerData = data
 end)
 
+RegisterNetEvent('qb-communityservice:client:opencomserv')
+AddEventHandler('qb-communityservice:client:opencomserv', function(source)
+	local comserv_menu = exports["qb-input"]:ShowInput({
+		header = "Community Service",
+		submitText = "Sent to Comm-Serv",
+		inputs = {
+			{
+				text = "Citizen ID",
+				name = "id",
+				type = "number",
+				isRequired = true
+			},
+			{
+				text = "How many (Actions)",
+				name = "amount",
+				type = "number",
+				isRequired = true
+			},
+		}
+	})
+	if comserv_menu then
+		if not comserv_menu.id or not comserv_menu.amount then
+			return
+		else
+			TriggerServerEvent('qb-communityservice:sendToCommunityService', comserv_menu.id, comserv_menu.amount)
+		end
+	end
+end)
+
 RegisterNetEvent('qb-communityservice:inCommunityService')
 AddEventHandler('qb-communityservice:inCommunityService', function(actions_remaining)
 	local playerPed = PlayerPedId()
