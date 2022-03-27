@@ -86,7 +86,7 @@ AddEventHandler('qb-communityservice:sendToCommunityService', function(target, a
 	end)
 	TriggerClientEvent('qb-communityservice:inCommunityService', _target, actions_count)
 	local Player = QBCore.Functions.GetSource(identifier)
-	local tmpName = Player.charinfo.firstname..' '..Player.charinfo.lastname
+	local tmpName = Player.PlayerData.charinfo.firstname..' '..Player.PlayerData.charinfo.lastname
 	TriggerClientEvent('QBCore:Notify', -1, Lang:t('info.comserv_msg',{user = tmpName, amount = actions_count}), "success")
 end)
 
