@@ -31,16 +31,6 @@
 }
 ```
 
-## Trigger you can use for the police
-- You can use if you want a trigger in your police server 
-```lua
-TriggerEvent('qb-communityservice:sendToCommunityService', id, amount)
-```
-- or a client trigger in police client
-```lua
-TriggerServerEvent('qb-communityservice:sendToCommunityService', id, amount)
-```
-
 ## 🐞 Any bugs issues or suggestions, let my know.
 
 ## 🙈 Youtube & Discord
