@@ -64,6 +64,7 @@ AddEventHandler('qb-communityservice:extendService', function()
 	end)
 end)
 
+
 RegisterServerEvent('qb-communityservice:sendToCommunityService')
 AddEventHandler('qb-communityservice:sendToCommunityService', function(target, actions_count)
 	local _target = target
@@ -84,9 +85,8 @@ AddEventHandler('qb-communityservice:sendToCommunityService', function(target, a
 		end
 	end)
 	TriggerClientEvent('qb-communityservice:inCommunityService', _target, actions_count)
-	
-	local Player = QBCore.Functions.GetPlayer(_target)
-	local tmpName = Player.PlayerData.charinfo.firstname..' '..Player.PlayerData.charinfo.lastname
+	local Player = QBCore.Functions.GetSource(identifier)
+	local tmpName = Player.charinfo.firstname..' '..Player.charinfo.lastname
 	TriggerClientEvent('QBCore:Notify', -1, Lang:t('info.comserv_msg',{user = tmpName, amount = actions_count}), "success")
 end)
 
@@ -115,7 +115,7 @@ function releaseFromCommunityService(target)
 			})
 		end
 	end)
-	local Player = QBCore.Functions.GetPlayer(target)
+	local Player = QBCore.Functions.GetPlayer(_target)
 	local tmpName = Player.PlayerData.charinfo.firstname..' '..Player.PlayerData.charinfo.lastname
 	TriggerClientEvent('qb-communityservice:finishCommunityService', _target)
 	TriggerClientEvent('QBCore:Notify', -1, Lang:t('info.comserv_finished',{user = tmpName}), "success")
