@@ -1,4 +1,4 @@
-## qb-communityservice, to punish players
+## mh-communityservice, to punish players
 - Punish misbehaved players.
 - players must complete their community service before they can continue playing.
 - Rejoining the server is not going to work to get out of community service.
@@ -10,7 +10,7 @@
 - ✅ [qb-core](https://github.com/qbcore-framework/qb-core)
 
 ## Install
-- place the folder `qb-communityservice` in `resources/[qb]`
+- place the folder `mh-communityservice` in `resources/[qb]`
 - add the sql table to your database.
 - restart your server
 
@@ -26,7 +26,7 @@
     title = 'Comm Service',
     icon = 'user-lock',
     type = 'client',
-    event = 'qb-communityservice:client:opencomserv',
+    event = 'mh-communityservice:client:opencomserv',
     shouldClose = true
 }
 ```
