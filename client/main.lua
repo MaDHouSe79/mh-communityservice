@@ -40,8 +40,8 @@ RegisterNetEvent('QBCore:Player:SetPlayerData', function(data)
     PlayerData = data
 end)
 
-RegisterNetEvent('qb-communityservice:client:opencomserv')
-AddEventHandler('qb-communityservice:client:opencomserv', function(source)
+RegisterNetEvent('mh-communityservice:client:opencomserv')
+AddEventHandler('mh-communityservice:client:opencomserv', function(source)
 	local comserv_menu = exports["qb-input"]:ShowInput({
 		header = "Community Service",
 		submitText = "Sent to Comm-Serv",
@@ -64,13 +64,13 @@ AddEventHandler('qb-communityservice:client:opencomserv', function(source)
 		if not comserv_menu.id or not comserv_menu.amount then
 			return
 		else
-			TriggerServerEvent('qb-communityservice:sendToCommunityService', tonumber(comserv_menu.id), tonumber(comserv_menu.amount))
+			TriggerServerEvent('mh-communityservice:sendToCommunityService', tonumber(comserv_menu.id), tonumber(comserv_menu.amount))
 		end
 	end
 end)
 
-RegisterNetEvent('qb-communityservice:inCommunityService')
-AddEventHandler('qb-communityservice:inCommunityService', function(actions_remaining)
+RegisterNetEvent('mh-communityservice:inCommunityService')
+AddEventHandler('mh-communityservice:inCommunityService', function(actions_remaining)
 	local playerPed = PlayerPedId()
 	if isSentenced then return end
 	actionsRemaining = actions_remaining
@@ -88,19 +88,19 @@ AddEventHandler('qb-communityservice:inCommunityService', function(actions_remai
 		Citizen.Wait(20000)
 		if GetDistanceBetweenCoords(GetEntityCoords(playerPed), Config.ServiceLocation.x, Config.ServiceLocation.y, Config.ServiceLocation.z) > 45 then
 			SetEntityCoords(playerPed, Config.ServiceLocation.x, Config.ServiceLocation.y, Config.ServiceLocation.z, false, false, false, true)
-			TriggerServerEvent('qb-communityservice:extendService')
+			TriggerServerEvent('mh-communityservice:extendService')
 			actionsRemaining = actionsRemaining + Config.ServiceExtensionOnEscape
 			QBCore.Functions.Notify(Lang:t('info.escape_attempt',{amount = Config.ServiceExtensionOnEscape}), 'error')
 		end
 	end
-	TriggerServerEvent('qb-communityservice:finishCommunityService', -1)
+	TriggerServerEvent('mh-communityservice:finishCommunityService', -1)
 	SetEntityCoords(playerPed, Config.ReleaseLocation.x, Config.ReleaseLocation.y, Config.ReleaseLocation.z, false, false, false, true)
 	isSentenced = false
-	TriggerServerEvent('qb-clothes:loadPlayerSkin')
+	TriggerServerEvent('mh-clothes:loadPlayerSkin')
 end)
 
-RegisterNetEvent('qb-communityservice:finishCommunityService')
-AddEventHandler('qb-communityservice:finishCommunityService', function(source)
+RegisterNetEvent('mh-communityservice:finishCommunityService')
+AddEventHandler('mh-communityservice:finishCommunityService', function(source)
 	communityServiceFinished = true
 	isSentenced = false
 	actionsRemaining = 0
@@ -124,7 +124,7 @@ CreateThread(function()
 						RemoveAction(tmp_action)
 						FillActionTable(tmp_action)
 						disable_actions = true
-						TriggerServerEvent('qb-communityservice:completeService')
+						TriggerServerEvent('mh-communityservice:completeService')
 						actionsRemaining = actionsRemaining - 1
 						if (tmp_action.type == "cleaning") then
 							local cSCoords = GetOffsetFromEntityInWorldCoords(GetPlayerPed(PlayerId()), 0.0, 0.0, -5.0)
@@ -172,17 +172,10 @@ CreateThread(function()
 end)
 
 CreateThread(function()
-	while QBCore == nil do
-		QBCore = exports['qb-core']:GetCoreObject()
-		Citizen.Wait(0)
-	end
-end)
-
-CreateThread(function()
 	while not LocalPlayer.state.isLoggedIn do Wait(10) end
 	if LocalPlayer.state.isLoggedIn then
 		Wait(2000) --Wait for mysql-async
-		TriggerServerEvent('qb-communityservice:checkIfSentenced')
+		TriggerServerEvent('mh-communityservice:checkIfSentenced')
 	end
 end)
 
@@ -240,9 +233,9 @@ function ApplyPrisonerSkin()
 		Citizen.CreateThread(function()
 			local gender = QBCore.Functions.GetPlayerData().charinfo.gender
 			if gender == 0 then
-				TriggerEvent('qb-clothing:client:loadOutfit', Config.Uniforms.male)
+				TriggerEvent('mh-clothing:client:loadOutfit', Config.Uniforms.male)
 			else
-				TriggerEvent('qb-clothing:client:loadOutfit', Config.Uniforms.female)
+				TriggerEvent('mh-clothing:client:loadOutfit', Config.Uniforms.female)
 			end
 			SetPedArmour(playerPed, 0)
 			ClearPedBloodDamage(playerPed)
