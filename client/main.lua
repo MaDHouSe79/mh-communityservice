@@ -233,9 +233,9 @@ function ApplyPrisonerSkin()
 		Citizen.CreateThread(function()
 			local gender = QBCore.Functions.GetPlayerData().charinfo.gender
 			if gender == 0 then
-				TriggerEvent('mh-clothing:client:loadOutfit', Config.Uniforms.male)
+				TriggerEvent('qb-clothing:client:loadOutfit', Config.Uniforms.male)
 			else
-				TriggerEvent('mh-clothing:client:loadOutfit', Config.Uniforms.female)
+				TriggerEvent('qb-clothing:client:loadOutfit', Config.Uniforms.female)
 			end
 			SetPedArmour(playerPed, 0)
 			ClearPedBloodDamage(playerPed)
