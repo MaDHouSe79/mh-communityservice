@@ -2,7 +2,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 QBCore.Commands.Add(Config.Command.start, Lang:t('command.start'), {}, true, function(source, args)
 	if args[1] and tonumber(args[2]) then
-		TriggerEvent('qb-communityservice:sendToCommunityService', tonumber(args[1]), tonumber(args[2]))
+		TriggerEvent('mh-communityservice:sendToCommunityService', tonumber(args[1]), tonumber(args[2]))
 	end
 end, 'admin')
 
