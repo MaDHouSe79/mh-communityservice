@@ -96,7 +96,7 @@ AddEventHandler('mh-communityservice:inCommunityService', function(actions_remai
 	TriggerServerEvent('mh-communityservice:finishCommunityService', -1)
 	SetEntityCoords(playerPed, Config.ReleaseLocation.x, Config.ReleaseLocation.y, Config.ReleaseLocation.z, false, false, false, true)
 	isSentenced = false
-	TriggerServerEvent('mh-clothes:loadPlayerSkin')
+	TriggerServerEvent('qb-clothes:loadPlayerSkin')
 end)
 
 RegisterNetEvent('mh-communityservice:finishCommunityService')
