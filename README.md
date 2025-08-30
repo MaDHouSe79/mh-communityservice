@@ -5,17 +5,17 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/MH-Scripts/mh-communityservice/issues">
-    <img src="https://img.shields.io/github/issues/MH-Scripts/mh-communityservice"/> 
+  <a href="https://github.com/MaDHouSe79/mh-communityservice/issues">
+    <img src="https://img.shields.io/github/issues/MaDHouSe79/mh-communityservice"/> 
   </a>
-  <a href="https://github.com/MH-Scripts/mh-communityservice/network/members">
-    <img src="https://img.shields.io/github/forks/MH-Scripts/mh-communityservice"/> 
+  <a href="https://github.com/MaDHouSe79/mh-communityservice/network/members">
+    <img src="https://img.shields.io/github/forks/MaDHouSe79/mh-communityservice"/> 
   </a>  
-  <a href="https://github.com/MH-Scripts/mh-communityservice/stargazers">
-    <img src="https://img.shields.io/github/stars/MH-Scripts/mh-communityservice?color=white"/> 
+  <a href="https://github.com/MaDHouSe79/mh-communityservice/stargazers">
+    <img src="https://img.shields.io/github/stars/MaDHouSe79/mh-communityservice?color=white"/> 
   </a>
-  <a href="https://github.com/MH-Scripts/mh-communityservice/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/MH-Scripts/mh-communityservice?color=black"/> 
+  <a href="https://github.com/MaDHouSe79/mh-communityservice/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/MaDHouSe79/mh-communityservice?color=black"/> 
   </a>      
 </p>
 
